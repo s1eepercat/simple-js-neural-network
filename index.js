@@ -8,9 +8,9 @@ const X_MAX = 400;
 const Y_MAX = 400;
 const R = 3;
 
-generatePoint();
+init();
 
-function generatePoint() {
+function init() {
   const randomPoints = [...Array(100).keys()].map(_ => {
     return {
       x: Math.random() * X_MAX,
@@ -56,12 +56,6 @@ function train(weights, inputs, actualTeam) {
     y: weights.y + (inputs.y * error)
   }
 }
-
-// function trainTest() {
-//   const inputs = { x: 200, y: 400 }; // -1
-//   const rWeights = randomWeights();
-//   return train(rWeights, inputs, findTeam(inputs));
-// }
 
 function trainedWeights() {
   const trainExamples = [...Array(10000).keys()].map(_ => {
